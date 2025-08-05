@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/main">
+
+    <!-- Preview của camera -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Recording Status - tự động cập nhật khi bật/tắt micro -->
+    <TextView
+        android:id="@+id/tvRecordingStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔴 Microphone tắt"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:background="#F5F5F5"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:minHeight="60dp"/>
+
+    <!-- Recorded Files List -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📁 File đã ghi:"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FFFFFF"
+        android:padding="4dp">
+
+        <LinearLayout
+            android:id="@+id/sentenceListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📝 Chưa có file nào..."
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Control Buttons Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnToggleCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mở Camera"
+            android:layout_margin="4dp"
+            android:minHeight="50dp"/>
+
+        <Button
+            android:id="@+id/btnToggleMicrophone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bật Micro"
+            android:layout_margin="4dp"
+            android:minHeight="50dp"/>
+    </LinearLayout>
+
+    <!-- Join Meeting Button -->
+    <Button
+        android:id="@+id/btnJoinMeeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tham gia Meeting"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:minHeight="60dp"/>
+
+</LinearLayout>
